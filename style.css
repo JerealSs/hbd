@@ -1,0 +1,94 @@
+/* ==========================================
+   RESET & PONDASI UTAMA
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212; /* Warna latar belakang luar frame (gelap agar kontras) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Kotak HP (Mengikuti aspek rasio desain Figma kamu) */
+.mobile-frame {
+    position: relative; /* Wajib sebagai jangkar untuk koordinat absolute */
+    width: 100%;
+    max-width: 412px;
+    height: 100vh;
+    max-height: 892px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: #ffb6c1;
+}
+
+/* Background Utama */
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* ==========================================
+   POSISI TEKS DI ATAS BUBBLE PINK
+   ========================================== */
+.text-overlay {
+    position: absolute;
+    top: 61.5%; /* Jarak dari atas dalam persen agar presisi di dalam bubble */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 76%; /* Membatasi lebar teks agar tidak keluar dari area pink */
+    z-index: 5;
+    text-align: center;
+}
+
+.birthday-text {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #000000; /* Warna hitam agar kontras dengan bubble pink */
+    line-height: 1.3;
+}
+
+/* ==========================================
+   TOMBOL INTERAKSI GAIB (OVERLAY HOTSPOT)
+   ========================================== */
+/* ==========================================
+   TOMBOL INTERAKSI MATAHARI (OVERLAY BULAT)
+   ========================================== */
+.button-overlay {
+    display: block; /* Tambahkan ini agar bentuk bulatnya merender sempurna */
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    
+    /* CARA MENGGESERNYA:
+       - Makin kecil nilai top (misal 5%), tombol makin NAIK.
+       - Makin besar nilai top (misal 50%), tombol makin TURUN.
+       - Makin kecil nilai left (misal 10%), tombol makin ke KIRI.
+       - Makin besar nilai left (misal 90%), tombol makin ke KANAN.
+    */
+    top: 16%;      /* Coba ubah angka ini perlahan */
+    left: 50%;     /* Coba ubah angka ini perlahan */
+    transform: translate(-50%, -50%); 
+    
+    width: 18%;          
+    aspect-ratio: 1 / 1; 
+    border-radius: 50%;  
+
+    background-color: rgb(0); 
+}
+
+/* Efek sedikit menggelap saat tombol gaibnya disentuh/di-hover */
+.button-overlay:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
