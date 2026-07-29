@@ -1,3 +1,21 @@
+.phone {
+  width: 412px;
+  max-width: 100vw;
+  background: var(--page-outer);
+  /* Hapus overflow: hidden di sini supaya seluruh bodi HP bisa menampung scroll */
+  overflow: visible; 
+  min-height: 100vh;
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  /* Jangan kunci height pakai aspect-ratio kaku kalau kontennya berisiko panjang/kepotong, 
+     atau biarkan min-height minimal sepanjang layar */
+  min-height: 892px; 
+  height: auto;
+  overflow: visible; /* Ubah dari hidden jadi visible agar tidak memotong elemen di dalam */
+}
 @font-face {
   font-family: "Pixellari";
   src: url("assets/Pixellari.ttf") format("truetype");
