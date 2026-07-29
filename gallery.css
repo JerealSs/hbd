@@ -6,7 +6,7 @@
 
 .gallery-screen {
   background: var(--page-outer);
-  aspect-ratio: 412 / 845; 
+  aspect-ratio: 412 / 892; 
   overflow: hidden;
   position: relative;
 }
