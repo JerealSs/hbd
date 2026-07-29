@@ -18,32 +18,33 @@
 
 html, body {
   height: 100%;
-  background: var(--page-outer);
-  overflow-x: hidden;
-  overflow-y: auto;
+  background: #1a1a1a; /* Background luar HP */
+  overflow: hidden; /* Matiin scroll body secara paksa */
 }
 
 body {
   font-family: "Pixelify Sans", system-ui, sans-serif;
   display: flex;
   justify-content: center;
-  min-height: 100%;
+  align-items: center;
 }
 
-/* Phone-sized canvas. Locked to the 412x892 design ratio,
-   scales down gracefully on narrower viewports, stays centered
-   with a soft outer background on wider ones. */
 .phone {
-  width: 412px;
-  max-width: 100vw;
+  width: 100%;
+  height: 100dvh; /* Membaca tinggi dinamis layar HP, termasuk saat address bar Chrome muncul */
   background: var(--page-outer);
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Gak perlu scroll lagi */
 }
 
 .screen {
   position: relative;
-  width: 100%;
+  /* MAGIC FORMULA: Ambil ukuran terkecil. Kalau layar HP kurang tinggi, lebarnya otomatis dikecilin biar muat 1 layar full tanpa kepotong */
+  width: min(100%, 412px, calc(100dvh * (412 / 892))); 
   aspect-ratio: 412 / 892;
+  margin: auto;
   overflow: hidden;
 }
 
